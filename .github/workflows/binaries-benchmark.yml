@@ -137,6 +137,8 @@ jobs:
     steps:
       - name: Get sources
         uses: actions/checkout@v4
+        with:
+          submodules: recursive
 
       - uses: depot/setup-action@v1
       - uses: depot/build-push-action@v1
@@ -167,6 +169,8 @@ jobs:
     steps:
       - name: Get sources
         uses: actions/checkout@v4
+        with:
+          submodules: recursive
 
       - uses: depot/setup-action@v1
       - uses: depot/build-push-action@v1
