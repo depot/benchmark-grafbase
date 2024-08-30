@@ -127,7 +127,6 @@ jobs:
           cargo check --package ${{ matrix.package }}
 
   docker-grafbase:
-    if: ${{ needs.detect-change-type.outputs.build == 'true' || startsWith(github.ref, 'refs/tags/') }}
     runs-on: depot-ubuntu-latest-16
     permissions:
       packages: write
@@ -156,7 +155,6 @@ jobs:
           GRAFBASE_DOCKER_IMAGE="ghcr.io/grafbase/grafbase:$COMMIT_SHA" RUST_BACKTRACE=1 cargo nextest run -p grafbase-docker-tests
 
   docker-gateway:
-    if: ${{ needs.detect-change-type.outputs.build == 'true' || startsWith(github.ref, 'refs/tags/') }}
     runs-on: depot-ubuntu-latest-16
     permissions:
       packages: write
