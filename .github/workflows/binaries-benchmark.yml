@@ -141,7 +141,7 @@ jobs:
       - uses: depot/setup-action@v1
       - uses: depot/build-push-action@v1
         with:
-          context: ./upstream/cli
+          context: upstream/cli
           tags: ghcr.io/grafbase/grafbase:$COMMIT_SHA
           save: true
 
@@ -171,6 +171,6 @@ jobs:
       - uses: depot/setup-action@v1
       - uses: depot/build-push-action@v1
         with:
-          context: ./upstream/gateway
+          context: upstream/gateway
           tags: ghcr.io/grafbase/gateway:$COMMIT_SHA
           save: true
