@@ -16,6 +16,7 @@ permissions:
   pull-requests: write
   # Allow issues write
   issues: write
+  id-token: write
 
 env:
   GRAFBASE_SKIP_ASSET_VERSION_CHECK: "true"
