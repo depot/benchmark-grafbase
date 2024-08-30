@@ -16,7 +16,6 @@ permissions:
   pull-requests: write
   # Allow issues write
   issues: write
-  id-token: write
 
 env:
   GRAFBASE_SKIP_ASSET_VERSION_CHECK: "true"
@@ -131,6 +130,8 @@ jobs:
     runs-on: depot-ubuntu-latest-16
     permissions:
       packages: write
+      contents: read
+      id-token: write
     env:
       COMMIT_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
     steps:
@@ -159,6 +160,8 @@ jobs:
     runs-on: depot-ubuntu-latest-16
     permissions:
       packages: write
+      contents: read
+      id-token: write
     env:
       COMMIT_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
     steps:
