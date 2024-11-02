@@ -44,8 +44,6 @@ jobs:
         uses: ./upstream/.github/actions/init_rust_job
         with:
           platform: linux
-          cache-key: ${{ runner.os }}-${{ runner.arch }}-cargo-build-${{ matrix.package }}-${{ hashFiles('Cargo.lock') }}
-          restore-key: ${{ runner.os }}-${{ runner.arch }}-cargo-build
 
       - name: Build assets
         if: ${{ matrix.package != 'grafbase-gateway' }}
@@ -92,8 +90,6 @@ jobs:
         uses: ./upstream/.github/actions/init_rust_job
         with:
           platform: linux
-          cache-key: ${{ runner.os }}-${{ runner.arch }}-cargo-build-${{ matrix.package }}-${{ hashFiles('Cargo.lock') }}
-          restore-key: ${{ runner.os }}-${{ runner.arch }}-cargo-build
 
       - name: Build assets
         if: ${{ matrix.package != 'grafbase-gateway' }}
