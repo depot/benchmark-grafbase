@@ -1,4 +1,4 @@
-name: cli rust build benchmark
+name: cli rust build benchmark 1
 
 on:
   workflow_dispatch:
