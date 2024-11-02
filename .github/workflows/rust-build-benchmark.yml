@@ -51,6 +51,7 @@ jobs:
 
       - name: Individual package build
         shell: bash
+        working-directory: upstream
         run: |
           set -euo pipefail
           # The actual features used for each dependency depends on what is being built simultaneously.
@@ -62,6 +63,7 @@ jobs:
       - name: Individual package without lambda
         if: ${{ matrix.package == 'grafbase-gateway' }}
         shell: bash
+        working-directory: upstream
         run: |
           set -euo pipefail
           cargo check --package ${{ matrix.package }}
@@ -97,6 +99,7 @@ jobs:
 
       - name: Individual package build
         shell: bash
+        working-directory: upstream
         run: |
           set -euo pipefail
           # The actual features used for each dependency depends on what is being built simultaneously.
@@ -108,6 +111,7 @@ jobs:
       - name: Individual package without lambda
         if: ${{ matrix.package == 'grafbase-gateway' }}
         shell: bash
+        working-directory: upstream
         run: |
           set -euo pipefail
           cargo check --package ${{ matrix.package }}
