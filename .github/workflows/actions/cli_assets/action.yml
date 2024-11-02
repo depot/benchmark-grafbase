@@ -8,11 +8,11 @@ inputs:
     default: cli
 
 runs:
-  using: 'composite'
+  using: "composite"
   steps:
     - name: Build cli-app
       shell: bash
-      working-directory: './packages/cli-app'
+      working-directory: "./upstream/packages/cli-app"
       run: |
         npx pnpm i
         npx pnpm run cli-app:build

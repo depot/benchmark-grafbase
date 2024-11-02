@@ -12,12 +12,12 @@ inputs:
       - linux
 
 runs:
-  using: 'composite'
+  using: "composite"
   steps:
     - name: Extract the Rust version to use from the `rust-toolchain.toml` file
       shell: bash
       run: |
-        rust_version=$(grep "channel" rust-toolchain.toml | cut -d "=" -f 2 | cut -d " " -f 2)
+        rust_version=$(grep "channel" ./upstream/rust-toolchain.toml | cut -d "=" -f 2 | cut -d " " -f 2)
         echo "RUST_VERSION=$rust_version" >> $GITHUB_ENV
 
     - name: Install Rust
