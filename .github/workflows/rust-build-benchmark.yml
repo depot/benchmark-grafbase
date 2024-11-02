@@ -1,4 +1,4 @@
-name: cli (benchmark Depot)
+name: cli rust build benchmark
 
 on:
   workflow_dispatch:
