@@ -37,9 +37,11 @@ jobs:
     steps:
       - name: Get sources
         uses: actions/checkout@v4
+        with:
+          submodules: recursive
 
       - name: Rust job init
-        uses: ./.github/actions/init_rust_job
+        uses: ./upstream/.github/actions/init_rust_job
         with:
           platform: linux
           cache-key: ${{ runner.os }}-${{ runner.arch }}-cargo-build-${{ matrix.package }}-${{ hashFiles('Cargo.lock') }}
@@ -47,7 +49,7 @@ jobs:
 
       - name: Build assets
         if: ${{ matrix.package != 'grafbase-gateway' }}
-        uses: ./.github/actions/cli_assets
+        uses: ./upstream/.github/actions/cli_assets
 
       - name: Individual package build
         shell: bash
@@ -83,9 +85,11 @@ jobs:
     steps:
       - name: Get sources
         uses: actions/checkout@v4
+        with:
+          submodules: recursive
 
       - name: Rust job init
-        uses: ./.github/actions/init_rust_job
+        uses: ./upstream/.github/actions/init_rust_job
         with:
           platform: linux
           cache-key: ${{ runner.os }}-${{ runner.arch }}-cargo-build-${{ matrix.package }}-${{ hashFiles('Cargo.lock') }}
@@ -93,7 +97,7 @@ jobs:
 
       - name: Build assets
         if: ${{ matrix.package != 'grafbase-gateway' }}
-        uses: ./.github/actions/cli_assets
+        uses: ./upstream/.github/actions/cli_assets
 
       - name: Individual package build
         shell: bash
